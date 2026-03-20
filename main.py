@@ -47,7 +47,7 @@ async def websocket_endpoint(websocket: WebSocket, client_type: str, client_id: 
                         "lat": message["lat"],
                         "lng": message["lng"]
                     }
-                    print(payload)
+                    
                     await redis_client.set(f"rider:{client_id}", json.dumps(payload))
                     await redis_client.publish("location_updates", json.dumps(payload))
 
