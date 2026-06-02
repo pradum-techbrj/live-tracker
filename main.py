@@ -6,7 +6,7 @@ from collections import defaultdict
 
 app = FastAPI()
 
-REDIS_URL = "redis://default:ALlKGIYQsFNL1394vkLQpDWG0f2RNxcF@redis-17683.crce206.ap-south-1-1.ec2.cloud.redislabs.com:17683"
+REDIS_URL = "redis://commx:Lucknow$99856@redis-19118.c212.ap-south-1-1.ec2.cloud.redislabs.com:19118"
 
 redis_client = redis.from_url(REDIS_URL, decode_responses=True)
 
