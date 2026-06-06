@@ -85,3 +85,7 @@ async def websocket_endpoint(websocket: WebSocket, client_type: str, client_id: 
 @app.get("/health")
 async def health():
     return {"status": "ok"}
+
+@app.get("/")
+async def root():
+    return {"message": "Hello World"}
