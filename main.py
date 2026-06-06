@@ -6,7 +6,7 @@ from collections import defaultdict
 
 app = FastAPI()
 
-REDIS_URL = "redis://commx:Lucknow$99856@redis-19118.c212.ap-south-1-1.ec2.cloud.redislabs.com:19118"
+REDIS_URL = "redis://default:bZQx76XgFZmuxDslPXscZavVFDkNpzrX@redis-19118.c212.ap-south-1-1.ec2.cloud.redislabs.com:19118"
 
 redis_client = redis.from_url(REDIS_URL, decode_responses=True)
 
@@ -59,7 +59,7 @@ async def websocket_endpoint(websocket: WebSocket, client_type: str, client_id: 
                 await redis_client.set(
                     f"rider:{client_id}",
                     json.dumps(payload),
-                    ex=60
+                    ex=300
                 )
 
                 await redis_client.publish("location_updates", json.dumps(payload))
